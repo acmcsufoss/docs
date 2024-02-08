@@ -53,6 +53,17 @@ function ProjectPreviewComponent(props: { project: Project }) {
         <a href={`${props.project.id}.html`}>{props.project.attrs?.title}</a>
       </h1>
       <p>{props.project.attrs?.description}</p>
+      <p>
+        {props.project.attrs?.repository && (
+          <a href={makeRepositoryURL(props.project.attrs?.repository)}>
+            <img
+              src="https://simpleicons.org/icons/github.svg"
+              width="24px"
+              alt="GitHub"
+            />
+          </a>
+        )}
+      </p>
     </article>
   );
 }
