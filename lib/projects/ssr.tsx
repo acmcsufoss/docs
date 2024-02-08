@@ -39,9 +39,32 @@ function ProjectPageComponent(props: { baseURL: string; project: Project }) {
       </Helmet>
 
       <article
-        className="markdown-content"
+        class="markdown-body"
         dangerouslySetInnerHTML={{ __html: html }}
       />
+
+      <hr />
+
+      {props.project.attrs?.repository && (
+        <p>
+          GitHub repository:{" "}
+          <a href={makeRepositoryURL(props.project.attrs?.repository)}>
+            {makeRepositoryURL(props.project.attrs?.repository)}
+          </a>
+        </p>
+      )}
+
+      {props.project.attrs?.participants?.length && (
+        <p>
+          Participants: {props.project.attrs.participants.join(", ")}
+        </p>
+      )}
+
+      {props.project.attrs?.labels?.length && (
+        <p>
+          Labels: {props.project.attrs.labels.join(", ")}
+        </p>
+      )}
     </main>
   );
 }
@@ -53,17 +76,6 @@ function ProjectPreviewComponent(props: { project: Project }) {
         <a href={`${props.project.id}.html`}>{props.project.attrs?.title}</a>
       </h2>
       <p>{props.project.attrs?.description}</p>
-      <p>
-        {props.project.attrs?.repository && (
-          <a href={makeRepositoryURL(props.project.attrs?.repository)}>
-            <img
-              src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
-              width="24px"
-              alt="GitHub"
-            />
-          </a>
-        )}
-      </p>
     </article>
   );
 }
@@ -112,6 +124,12 @@ function renderPageHTML(component: any) {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
     ${head.join("\n")}
   </head>
   <body ${attributes.body.toString()}>${body}${footer.join("\n")}</body>
