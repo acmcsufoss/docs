@@ -48,10 +48,10 @@ function ProjectPageComponent(props: { baseURL: string; project: Project }) {
 
 function ProjectPreviewComponent(props: { project: Project }) {
   return (
-    <article>
-      <h1>
+    <article class="project-preview">
+      <h2>
         <a href={`${props.project.id}.html`}>{props.project.attrs?.title}</a>
-      </h1>
+      </h2>
       <p>{props.project.attrs?.description}</p>
       <p>
         {props.project.attrs?.repository && (
@@ -112,7 +112,6 @@ function renderPageHTML(component: any) {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico" type="image/svg+xml">
     ${head.join("\n")}
   </head>
   <body ${attributes.body.toString()}>${body}${footer.join("\n")}</body>
