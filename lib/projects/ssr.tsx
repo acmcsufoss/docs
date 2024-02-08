@@ -16,8 +16,8 @@ function makeRepositoryURL(repository: string) {
   return `https://github.com/acmcsufoss/${repository}`;
 }
 
-function ProjectPageComponent(props: { project: Project }) {
-  const html = render(props.project.md, { baseUrl: "/" });
+function ProjectPageComponent(props: { baseURL: string; project: Project }) {
+  const html = render(props.project.md, { baseUrl: props.baseURL });
   return (
     <main>
       <Helmet>
@@ -44,7 +44,7 @@ function ProjectPreviewComponent(props: { project: Project }) {
   return (
     <article>
       <h1>
-        <a href={`/${props.project.id}.html`}>{props.project.attrs?.title}</a>
+        <a href={`${props.project.id}.html`}>{props.project.attrs?.title}</a>
       </h1>
       <p>{props.project.attrs?.description}</p>
     </article>
@@ -99,6 +99,8 @@ export function renderProjectsPageHTML(projects: Project[]) {
   return renderPageHTML(<ProjectsPageComponent projects={projects} />);
 }
 
-export function renderProjectPageHTML(project: Project) {
-  return renderPageHTML(<ProjectPageComponent project={project} />);
+export function renderProjectPageHTML(project: Project, baseURL = "/") {
+  return renderPageHTML(
+    <ProjectPageComponent project={project} baseURL={baseURL} />,
+  );
 }

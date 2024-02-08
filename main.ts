@@ -10,7 +10,7 @@ import {
 // in the projects directory.
 async function main(args: string[]) {
   const flags = parseArgs(args, {
-    string: ["indir", "outdir", "staticdir"],
+    string: ["indir", "outdir", "staticdir", "base-url"],
     alias: {
       indir: ["i"],
       outdir: ["o"],
@@ -30,7 +30,7 @@ async function main(args: string[]) {
   const projects: Project[] = [];
   for await (const project of walkProjects(`${flags.indir}/*.md`)) {
     projects.push(project);
-    const html = renderProjectPageHTML(project);
+    const html = renderProjectPageHTML(project, flags["base-url"]);
     await Deno.writeTextFile(`${flags.outdir}/${project.id}.html`, html);
     const json = JSON.stringify(project, null, 2);
     await Deno.writeTextFile(`${flags.outdir}/${project.id}.json`, json);

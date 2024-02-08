@@ -1,5 +1,6 @@
 ---
 title: "Crying Counter"
+repository: "crying-counter"
 participants: ["Ethan", "Karni", "Jacob", "Justin", "Vamsi"]
 labels: ["python"]
 ---
