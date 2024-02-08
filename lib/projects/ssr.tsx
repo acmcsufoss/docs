@@ -37,6 +37,71 @@ function ParticipantsComponent(props: { participants: string[] }) {
   );
 }
 
+function GitHubRepositoryComponent(props: { repository: string }) {
+  return (
+    <a
+      href={makeRepositoryURL(props.repository)}
+    >
+      {makeRepositoryURL(props.repository)}
+    </a>
+  );
+}
+
+function ProjectMetadataTableComponent(props: { project: Project }) {
+  return (
+    <table>
+      <tr>
+        <td colspan="2">
+          <b>Metadata</b>
+        </td>
+      </tr>
+
+      {props.project.attrs?.title && (
+        <tr>
+          <td>Title</td>
+          <td>{props.project.attrs.title}</td>
+        </tr>
+      )}
+
+      {props.project.attrs?.description && (
+        <tr>
+          <td>Description</td>
+          <td>{props.project.attrs.description}</td>
+        </tr>
+      )}
+
+      {props.project.attrs?.labels?.length && (
+        <tr>
+          <td>Labels</td>
+          <td>{props.project.attrs.labels.join(", ")}</td>
+        </tr>
+      )}
+
+      {props.project.attrs?.participants?.length && (
+        <tr>
+          <td>Participants</td>
+          <td>
+            <ParticipantsComponent
+              participants={props.project.attrs.participants}
+            />
+          </td>
+        </tr>
+      )}
+
+      {props.project.attrs?.repository && (
+        <tr>
+          <td>GitHub repository</td>
+          <td>
+            <GitHubRepositoryComponent
+              repository={props.project.attrs.repository}
+            />
+          </td>
+        </tr>
+      )}
+    </table>
+  );
+}
+
 function ProjectPageComponent(props: { baseURL: string; project: Project }) {
   const html = render(props.project.md, { baseUrl: props.baseURL });
   return (
@@ -66,29 +131,7 @@ function ProjectPageComponent(props: { baseURL: string; project: Project }) {
 
       <hr />
 
-      {props.project.attrs?.labels?.length && (
-        <p>
-          Labels: {props.project.attrs.labels.join(", ")}
-        </p>
-      )}
-
-      {props.project.attrs?.participants?.length && (
-        <p>
-          Participants:{" "}
-          <ParticipantsComponent
-            participants={props.project.attrs.participants}
-          />
-        </p>
-      )}
-
-      {props.project.attrs?.repository && (
-        <p>
-          GitHub repository:{" "}
-          <a href={makeRepositoryURL(props.project.attrs?.repository)}>
-            {makeRepositoryURL(props.project.attrs?.repository)}
-          </a>
-        </p>
-      )}
+      <ProjectMetadataTableComponent project={props.project} />
     </main>
   );
 }
