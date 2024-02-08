@@ -57,7 +57,7 @@ function ProjectPreviewComponent(props: { project: Project }) {
         {props.project.attrs?.repository && (
           <a href={makeRepositoryURL(props.project.attrs?.repository)}>
             <img
-              src="https://simpleicons.org/icons/github.svg"
+              src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
               width="24px"
               alt="GitHub"
             />
@@ -112,7 +112,7 @@ function renderPageHTML(component: any) {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/svg+xml">
     ${head.join("\n")}
   </head>
   <body ${attributes.body.toString()}>${body}${footer.join("\n")}</body>
