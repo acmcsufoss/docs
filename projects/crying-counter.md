@@ -1,0 +1,15 @@
+---
+title: "Crying Counter"
+participants: ["Ethan", "Karni", "Jacob", "Justin", "Vamsi"]
+labels: ["python"]
+---
+
+# Crying Counter
+
+## Description
+
+Counts instances of “I’m crying” by Discord user ID.
+
+## References
+
+- [Design document](https://docs.google.com/document/d/1G3jYfibJuN2NPhCEEtuYVbyL_C04p8puD6ynT8I7Vy8/edit)

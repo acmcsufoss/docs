@@ -1,0 +1,19 @@
+{
+  "tasks": {
+    "lock": "deno cache --lock=deno.lock --lock-write deps.ts",
+    "udd": "deno run -Ar https://deno.land/x/udd/main.ts deps.ts && deno task lock",
+    "build": "deno run -A main.ts",
+    "dev": "deno run -A --watch main.ts",
+    "serve": "deno run -A https://deno.land/std/http/file_server.ts build"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxFactory": "h",
+    "jsxImportSource": "nano_jsx"
+  },
+  "imports": {
+    "#/": "./",
+    "nano_jsx/jsx-runtime": "https://deno.land/x/nano_jsx@v0.1.0/jsx-runtime/index.ts"
+  },
+  "exclude": ["build"]
+}
