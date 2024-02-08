@@ -74,6 +74,7 @@ export function ProjectsPageComponent(props: { projects: Project[] }) {
           content="List of initiatives owned by the Open Source Software team."
         />
       </Helmet>
+      <h1>Open Source Software projects</h1>
       <ProjectPreviewListComponent projects={props.projects} />
     </main>
   );
