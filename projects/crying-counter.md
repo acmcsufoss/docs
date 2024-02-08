@@ -1,7 +1,7 @@
 ---
 title: "Crying Counter"
 repository: "crying-counter"
-participants: ["Ethan", "Karni", "Jacob", "Justin", "Vamsi"]
+participants: ["@EthanThatOneKid", "Karni", "Jacob", "Justin", "Vamsi"]
 labels: ["python"]
 ---
 

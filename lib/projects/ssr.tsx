@@ -16,6 +16,27 @@ function makeRepositoryURL(repository: string) {
   return `https://github.com/acmcsufoss/${repository}`;
 }
 
+function ParticipantComponent(props: { participant: string }) {
+  if (props.participant.startsWith("@")) {
+    const url = `https://github.com/${props.participant.slice(1)}`;
+    return <a href={url}>{props.participant}</a>;
+  }
+
+  return props.participant;
+}
+
+function ParticipantsComponent(props: { participants: string[] }) {
+  return (
+    <ul>
+      {props.participants.map((participant) => (
+        <li>
+          <ParticipantComponent participant={participant} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function ProjectPageComponent(props: { baseURL: string; project: Project }) {
   const html = render(props.project.md, { baseUrl: props.baseURL });
   return (
@@ -45,24 +66,27 @@ function ProjectPageComponent(props: { baseURL: string; project: Project }) {
 
       <hr />
 
+      {props.project.attrs?.labels?.length && (
+        <p>
+          Labels: {props.project.attrs.labels.join(", ")}
+        </p>
+      )}
+
+      {props.project.attrs?.participants?.length && (
+        <p>
+          Participants:{" "}
+          <ParticipantsComponent
+            participants={props.project.attrs.participants}
+          />
+        </p>
+      )}
+
       {props.project.attrs?.repository && (
         <p>
           GitHub repository:{" "}
           <a href={makeRepositoryURL(props.project.attrs?.repository)}>
             {makeRepositoryURL(props.project.attrs?.repository)}
           </a>
-        </p>
-      )}
-
-      {props.project.attrs?.participants?.length && (
-        <p>
-          Participants: {props.project.attrs.participants.join(", ")}
-        </p>
-      )}
-
-      {props.project.attrs?.labels?.length && (
-        <p>
-          Labels: {props.project.attrs.labels.join(", ")}
         </p>
       )}
     </main>
