@@ -1,8 +1,8 @@
 ---
 title: "acmcsuf.com"
 repository: "https://acmcsuf.com/code"
-participants: ["@EthanThatOneKid", "Karni", "Tomas"]
-labels: ["svelte"]
+participants: ["@EthanThatOneKid", "@karnikaavelumani", "@tomasohCHOM"]
+labels: ["svelte", "typescript"]
 ---
 
 # acmcsuf.com
