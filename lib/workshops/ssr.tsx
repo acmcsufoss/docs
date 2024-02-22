@@ -7,48 +7,11 @@ import {
 } from "./workshops.ts";
 
 function WorkshopPreviewComponent(props: { workshop: Workshop }) {
-  if (props.workshop.urls.length === 0) {
+  if (!props.workshop.url) {
     return props.workshop.title;
   }
 
-  return <a href={props.workshop.urls[0]}>{props.workshop.title}</a>;
-}
-
-function WorkshopTableComponent(props: { workshop: Workshop }) {
-  return (
-    <table>
-      <tr>
-        <td>Title</td>
-        <td>{props.workshop.title}</td>
-      </tr>
-      {props.workshop.groupID && (
-        <tr>
-          <td>Group ID</td>
-          <td>{props.workshop.groupID}</td>
-        </tr>
-      )}
-      <tr>
-        <td>Timestamp</td>
-        <td>
-          <time dateTime={props.workshop.timestamp}>
-            {props.workshop.timestamp}
-          </time>
-        </td>
-      </tr>
-      <tr>
-        <td>References</td>
-        <td>
-          <ul>
-            {props.workshop.urls.map((url) => (
-              <li>
-                <a href={url}>{url}</a>
-              </li>
-            ))}
-          </ul>
-        </td>
-      </tr>
-    </table>
-  );
+  return <a href={props.workshop.url}>{props.workshop.title}</a>;
 }
 
 function WorkshopGroupsTableComponent(
@@ -122,11 +85,26 @@ function WorkshopGroupTableComponent(
   props: { workshops: Workshop[] },
 ) {
   return (
-    <div>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Group ID</th>
+        <th>Timestamp</th>
+      </tr>
       {props.workshops.map((workshop) => (
-        <WorkshopTableComponent workshop={workshop} />
+        <tr>
+          <td>
+            <WorkshopPreviewComponent workshop={workshop} />
+          </td>
+          <td>{workshop.group_id ?? "N/A"}</td>
+          <td>
+            <time dateTime={workshop.timestamp}>
+              {workshop.timestamp}
+            </time>
+          </td>
+        </tr>
       ))}
-    </div>
+    </table>
   );
 }
 

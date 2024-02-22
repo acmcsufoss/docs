@@ -1,4 +1,4 @@
-import { copy, parseArgs } from "#/deps.ts";
+import { copy, Helmet, parseArgs } from "#/deps.ts";
 import type { Project } from "#/lib/projects/mod.ts";
 import {
   renderProjectPageHTML,
@@ -11,6 +11,7 @@ import {
   renderWorkshopGroupPageHTML,
   renderWorkshopGroupsPageHTML,
 } from "#/lib/workshops/mod.ts";
+import { withLayout } from "#/lib/layout/mod.ts";
 
 // Build script for generating static site from markdown files
 // in the projects directory.
@@ -86,8 +87,30 @@ async function main(args: string[]) {
   await copy(flags.staticdir, flags.outdir, { overwrite: true });
 
   // Render index page.
-  // TODO: Change content of docs index page.
-  await Deno.writeTextFile(`${flags.outdir}/index.html`, projectsIndexHTML);
+  await Deno.writeTextFile(
+    `${flags.outdir}/index.html`,
+    withLayout(
+      <main>
+        <Helmet></Helmet>
+        <h1>Home</h1>
+        <p>
+          This is a static documentation site for the{" "}
+          <a href="https://github.com/acmcsufoss">
+            <strong>@acmcsufoss</strong>
+          </a>{" "}
+          organization.
+          <ul>
+            <li>
+              <a href="projects.html">Projects</a>
+            </li>
+            <li>
+              <a href="workshops.html">Workshops</a>
+            </li>
+          </ul>
+        </p>
+      </main>,
+    ),
+  );
 }
 
 if (import.meta.main) {

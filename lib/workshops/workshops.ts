@@ -4,18 +4,20 @@ export interface Workshop {
   title: string;
   description?: string;
   timestamp: string;
-  groupID?: string;
-  urls: string[];
+  group_id?: string;
+  url?: string;
 }
 
 export function isWorkshop(obj: unknown): obj is Workshop {
   return (
     typeof obj === "object" &&
-    obj !== null &&
-    typeof (obj as Workshop).title === "string" &&
-    typeof (obj as Workshop).timestamp === "string" &&
-    Array.isArray((obj as Workshop).urls) &&
-    (obj as Workshop).urls.every((url: string) => typeof url === "string")
+      obj !== null &&
+      typeof (obj as Workshop).title === "string" &&
+      typeof (obj as Workshop).timestamp === "string" &&
+      (obj as Workshop).group_id === undefined ||
+    typeof (obj as Workshop).group_id === "string" &&
+      (obj as Workshop).url === undefined ||
+    typeof (obj as Workshop).url === "string"
   );
 }
 
@@ -49,7 +51,7 @@ export function groupWorkshops(
 ) {
   const groups: Record<string, Workshop[]> = {};
   for (const workshop of workshops) {
-    const groupID = workshop.groupID ?? defaultGroupID;
+    const groupID = workshop.group_id ?? defaultGroupID;
     if (!(groupID in groups)) {
       groups[groupID] = [];
     }
