@@ -1,0 +1,22 @@
+- title: "Introduction to Python Programming"
+  description: "Learn the basics of Python programming language."
+  timestamp: "2024-03-10T09:00:00Z"
+  groupID: "12345"
+  urls:
+    - "https://example.com/workshop1"
+    - "https://github.com/workshop1"
+
+- title: "Web Development Workshop"
+  description: "Explore the fundamentals of web development."
+  timestamp: "2024-03-15T14:00:00Z"
+  groupID: "67890"
+  urls:
+    - "https://example.com/workshop2"
+    - "https://github.com/workshop2"
+
+- title: "Data Science Bootcamp"
+  description: "Dive into the world of data science and machine learning."
+  timestamp: "2024-03-20T10:00:00Z"
+  urls:
+    - "https://example.com/workshop3"
+    - "https://github.com/workshop3"

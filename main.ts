@@ -5,6 +5,12 @@ import {
   renderProjectsPageHTML,
   walkProjects,
 } from "#/lib/projects/mod.ts";
+import {
+  groupWorkshops,
+  parseWorkshopsYAML,
+  renderWorkshopGroupPageHTML,
+  renderWorkshopGroupsPageHTML,
+} from "#/lib/workshops/mod.ts";
 
 // Build script for generating static site from markdown files
 // in the projects directory.
@@ -26,7 +32,7 @@ async function main(args: string[]) {
   // Create outdir if it does not exist.
   await Deno.mkdir(flags.outdir, { recursive: true });
 
-  // Render markdown files to HTML.
+  // Render projects assets.
   const projects: Project[] = [];
   for await (const project of walkProjects(`${flags.indir}/*.md`)) {
     projects.push(project);
@@ -36,12 +42,52 @@ async function main(args: string[]) {
     await Deno.writeTextFile(`${flags.outdir}/${project.id}.json`, json);
   }
 
+  const projectsIndexHTML = await renderProjectsPageHTML(projects);
+  await Deno.writeTextFile(
+    `${flags.outdir}/projects.html`,
+    projectsIndexHTML,
+  );
+
+  // Create workshops directory if it does not exist.
+  await Deno.mkdir(`${flags.outdir}/workshops`, { recursive: true });
+
+  // Render workshops assets.
+  const workshopsYAML = await Deno.readTextFile("workshops.yaml");
+  const workshopGroups = groupWorkshops(parseWorkshopsYAML(workshopsYAML));
+  for (const groupID in workshopGroups) {
+    const workshopIndexHTML = renderWorkshopGroupPageHTML(
+      groupID,
+      workshopGroups[groupID],
+    );
+
+    await Deno.writeTextFile(
+      `${flags.outdir}/workshops/${groupID}.html`,
+      workshopIndexHTML,
+    );
+    await Deno.writeTextFile(
+      `${flags.outdir}/workshops/${groupID}.json`,
+      JSON.stringify(workshopGroups[groupID], null, 2),
+    );
+  }
+
+  const workshopsIndexHTML = renderWorkshopGroupsPageHTML(
+    workshopGroups,
+  );
+  await Deno.writeTextFile(
+    `${flags.outdir}/workshops.html`,
+    workshopsIndexHTML,
+  );
+  await Deno.writeTextFile(
+    `${flags.outdir}/workshops.json`,
+    JSON.stringify(workshopGroups, null, 2),
+  );
+
   // Copy contents of static directory to outdir.
   await copy(flags.staticdir, flags.outdir, { overwrite: true });
 
   // Render index page.
-  const html = await renderProjectsPageHTML(projects);
-  await Deno.writeTextFile(`${flags.outdir}/index.html`, html);
+  // TODO: Change content of docs index page.
+  await Deno.writeTextFile(`${flags.outdir}/index.html`, projectsIndexHTML);
 }
 
 if (import.meta.main) {
