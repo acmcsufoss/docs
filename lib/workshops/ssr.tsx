@@ -20,8 +20,8 @@ function WorkshopGroupsTableComponent(
   return (
     <table>
       <tr>
-        <th>Workshop series ID</th>
-        <th>Workshops series</th>
+        <th>Workshop series</th>
+        <th>Workshops</th>
       </tr>
       {Object.keys(props.workshopGroups)
         .filter((groupID) => groupID !== DEFAULT_GROUP_ID)
@@ -59,12 +59,6 @@ function WorkshopGroupsPageComponent(
           name="description"
           content="Open Source Software workshops"
         />
-        <script
-          src="https://ethanthatonekid.github.io/dropin-minimal-css/switcher.js"
-          type="text/javascript"
-          defer
-        >
-        </script>
       </Helmet>
 
       <h1>Workshops</h1>
@@ -122,12 +116,6 @@ function WorkshopGroupPageComponent(
           name="description"
           content={`Workshops in the ${props.groupID} series`}
         />
-        <script
-          src="https://ethanthatonekid.github.io/dropin-minimal-css/switcher.js"
-          type="text/javascript"
-          defer
-        >
-        </script>
       </Helmet>
 
       <h1>{props.groupID}</h1>

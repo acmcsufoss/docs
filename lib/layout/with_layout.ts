@@ -9,9 +9,10 @@ export function withLayout(component: any) {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="https://ethanthatonekid.github.io/dropin-minimal-css/min/github-markdown.min.css">
       <style>
         html, body {
-          margin: 0;
+          margin: 0 auto;
           padding: 0;
         }
       </style>

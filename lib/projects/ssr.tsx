@@ -117,12 +117,6 @@ function ProjectPageComponent(props: { baseURL: string; project: Project }) {
           content={props.project.attrs?.description}
         />
         <style>{CSS}</style>
-        <script
-          src="https://ethanthatonekid.github.io/dropin-minimal-css/switcher.js"
-          type="text/javascript"
-          defer
-        >
-        </script>
       </Helmet>
 
       <article
@@ -168,12 +162,6 @@ export function ProjectsPageComponent(props: { projects: Project[] }) {
           name="description"
           content="List of initiatives owned by the Open Source Software team."
         />
-        <script
-          src="https://ethanthatonekid.github.io/dropin-minimal-css/switcher.js"
-          type="text/javascript"
-          defer
-        >
-        </script>
       </Helmet>
       <h1>Open Source Software projects</h1>
       <ProjectsTableComponent projects={props.projects} />
