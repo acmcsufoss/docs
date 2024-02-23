@@ -1,7 +1,7 @@
 ---
 title: "Clubannounce"
 repository: "clubannounce"
-participants: ["@EthanThatOneKid", "Karni", "Tomas"]
+participants: ["@EthanThatOneKid", "Karni", "Tomas", "@Haothai1"]
 labels: ["svelte"]
 ---
 

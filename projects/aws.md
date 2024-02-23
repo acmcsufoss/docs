@@ -1,7 +1,7 @@
 ---
 title: "acm-aws"
 repository: "acm-aws"
-participants: ["@diamondburned", "@EthanThatOneKid"]
+participants: ["@diamondburned", "@EthanThatOneKid", "@akanksh5", "@dhnpx", "@Haothai1"]
 labels: ["nix", "shell"]
 ---
 

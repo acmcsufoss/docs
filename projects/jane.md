@@ -1,7 +1,7 @@
 ---
 title: "acmJane"
 repository: "acmJane"
-participants: ["@EthanThatOneKid", "Joel"]
+participants: ["@EthanThatOneKid", "Joel", "@owen-rote"]
 labels: ["python"]
 ---
 
@@ -9,4 +9,4 @@ labels: ["python"]
 
 ## Description
 
-A PaLM based conversational Discord bot
+A PaLM based conversational Discord bot.

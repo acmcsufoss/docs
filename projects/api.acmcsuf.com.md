@@ -1,7 +1,7 @@
 ---
 title: "api.acmcsuf.com"
 repository: "api.acmcsuf.com"
-participants: ["@EthanThatOneKid", "@johncmanuel", "@akanksh5", "@andrewasg11", "@tomasohCHOM", "@VickyaWei", "@weiweili1207"]
+participants: ["@EthanThatOneKid", "@johncmanuel", "@akanksh5", "@andrewasg11", "@tomasohCHOM", "@akshaychaudhari", "@dustinchavez1", "tvpower89","@dhnpx","@ruby510", "@Haothai1", "@VickyaWei", "@weiweili1207"]
 labels: ["go", "openapi", "sqlc"]
 ---
 
@@ -9,5 +9,5 @@ labels: ["go", "openapi", "sqlc"]
 
 ## Description
 
-CM at CSUF club API for managing events, announcements, forms, and other
+ACM at CSUF club API for managing events, announcements, forms, and other
 services!
