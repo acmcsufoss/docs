@@ -128,6 +128,9 @@ function ProjectPageComponent(props: { baseURL: string; project: Project }) {
       <hr />
 
       <ProjectMetadataTableComponent project={props.project} />
+      <footer>
+        <a href="../projects.html">↩ Projects</a>
+      </footer>
     </main>
   );
 }
@@ -167,6 +170,9 @@ export function ProjectsPageComponent(props: { projects: Project[] }) {
 
       <PageHeading title="projects" />
       <ProjectsTableComponent projects={props.projects} />
+      <footer>
+        <a href="./index.html">↩ Docs</a>
+      </footer>
     </main>
   );
 }

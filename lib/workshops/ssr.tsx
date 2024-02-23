@@ -51,6 +51,9 @@ function WorkshopGroupsPageComponent(
 
       <PageHeading title="workshops" />
       <WorkshopGroupsTableComponent workshopGroups={props.workshopGroups} />
+      <footer>
+        <a href="./index.html">↩ Docs</a>
+      </footer>
     </main>
   );
 }
@@ -108,6 +111,9 @@ function WorkshopGroupPageComponent(
 
       <h1>{props.group.groupID}</h1>
       <WorkshopGroupTableComponent workshops={props.group.workshops} />
+      <footer>
+        <a href="../workshops.html">↩ Workshops</a>
+      </footer>
     </main>
   );
 }
