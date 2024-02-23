@@ -143,7 +143,7 @@ function ProjectsTableComponent(props: { projects: Project[] }) {
       {props.projects.map((project) => (
         <tr>
           <td>
-            <a href={`${project.id}.html`}>{project.attrs?.title}</a>
+            <a href={`projects/${project.id}.html`}>{project.attrs?.title}</a>
           </td>
           <td>{project.attrs?.labels?.join(", ")}</td>
           <td>{project.attrs?.participants?.length ?? "N/A"}</td>
