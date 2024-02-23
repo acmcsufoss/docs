@@ -75,6 +75,7 @@ function WorkshopGroupTableComponent(
         <th>#</th>
         <th>Workshop</th>
         <th>Timestamp</th>
+        <th>Description</th>
       </tr>
       {props.workshops.map((workshop, i) => (
         <tr>
@@ -87,6 +88,7 @@ function WorkshopGroupTableComponent(
               {workshop.timestamp}
             </time>
           </td>
+          <td>{workshop.description ?? "N/A"}</td>
         </tr>
       ))}
     </table>
