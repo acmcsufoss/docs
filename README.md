@@ -74,7 +74,6 @@ Build the project:
 deno task build
 ```
 
-````
 Build the project in development mode:
 
 ```sh
@@ -112,4 +111,3 @@ deno task udd
 ---
 
 Maintained with 💚 by [**@acmcsufoss**](https://github.com/acmcsufoss)
-````
