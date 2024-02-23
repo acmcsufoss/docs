@@ -12,7 +12,7 @@ export function withLayout(component: any) {
       <link rel="stylesheet" type="text/css" href="https://ethanthatonekid.github.io/dropin-minimal-css/min/hack.min.css">
       <style>
         html, body {
-          margin: 0 auto;
+          margin: auto 2em;
           padding: 0;
         }
       </style>
