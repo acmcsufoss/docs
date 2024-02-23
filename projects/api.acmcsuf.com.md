@@ -1,7 +1,7 @@
 ---
 title: "api.acmcsuf.com"
 repository: "api.acmcsuf.com"
-participants: ["@EthanThatOneKid", "@johncmanuel", "@akanksh5", "@andrewasg11", "@tomasohCHOM"]
+participants: ["@EthanThatOneKid", "@johncmanuel", "@akanksh5", "@andrewasg11", "@tomasohCHOM", "@VickyaWei", "@weiweili1207"]
 labels: ["go", "openapi", "sqlc"]
 ---
 
