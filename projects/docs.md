@@ -1,8 +1,8 @@
 ---
 title: "Docs"
 repository: "docs"
-participants: ["@EthanThatOneKid", "@EvanCPSC", "@VickyaWei"]
-labels: ["typescript", "markdown", "github workflow", "@weiweili1207"]
+participants: ["@EthanThatOneKid", "@EvanCPSC", "@VickyaWei", "@weiweili1207"]
+labels: ["typescript", "markdown", "github workflow"]
 ---
 
 # Docs
