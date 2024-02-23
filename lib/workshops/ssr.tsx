@@ -1,5 +1,6 @@
 import { Helmet } from "#/deps.ts";
-import { withLayout } from "#/lib/layout/mod.ts";
+import { withLayout } from "#/lib/shared/layout/mod.ts";
+import { PageHeading } from "#/lib/shared/page_heading/mod.ts";
 import {
   DEFAULT_GROUP_ID,
   type Workshop,
@@ -55,7 +56,7 @@ function WorkshopGroupsPageComponent(
         />
       </Helmet>
 
-      <h1>Workshops</h1>
+      <PageHeading title="workshops" />
       <WorkshopGroupsTableComponent workshopGroups={props.workshopGroups} />
     </main>
   );

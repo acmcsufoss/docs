@@ -1,5 +1,6 @@
 import { CSS, Helmet, render } from "#/deps.ts";
-import { withLayout } from "#/lib/layout/mod.ts";
+import { withLayout } from "#/lib/shared/layout/mod.ts";
+import { PageHeading } from "#/lib/shared/page_heading/mod.ts";
 import type { Project } from "./projects.ts";
 
 /**
@@ -163,7 +164,8 @@ export function ProjectsPageComponent(props: { projects: Project[] }) {
           content="List of initiatives owned by the Open Source Software team."
         />
       </Helmet>
-      <h1>Open Source Software projects</h1>
+
+      <PageHeading title="projects" />
       <ProjectsTableComponent projects={props.projects} />
     </main>
   );

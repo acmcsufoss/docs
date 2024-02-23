@@ -11,7 +11,8 @@ import {
   renderWorkshopGroupPageHTML,
   renderWorkshopGroupsPageHTML,
 } from "#/lib/workshops/mod.ts";
-import { withLayout } from "#/lib/layout/mod.ts";
+import { withLayout } from "./lib/shared/layout/mod.ts";
+import { PageHeading } from "#/lib/shared/page_heading/mod.ts";
 
 // Build script for generating static site from markdown files
 // in the projects directory.
@@ -91,8 +92,15 @@ async function main(args: string[]) {
     `${flags.outdir}/index.html`,
     withLayout(
       <main>
-        <Helmet></Helmet>
-        <h1>Home</h1>
+        <Helmet>
+          <html lang="en" amp />
+          <title>Open Source Software docs</title>
+          <meta
+            name="description"
+            content="ACM at CSUF Open Source Software team documentation"
+          />
+        </Helmet>
+        <PageHeading title="docs" />
         <p>
           This is a static documentation site for the{" "}
           <a href="https://github.com/acmcsufoss">
