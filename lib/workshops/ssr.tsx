@@ -20,7 +20,7 @@ function WorkshopGroupsTableComponent(
   return (
     <table>
       <tr>
-        <th>Workshop series</th>
+        <th>Series</th>
         <th>Workshops</th>
       </tr>
       {Object.keys(props.workshopGroups)
@@ -31,13 +31,7 @@ function WorkshopGroupsTableComponent(
               <a href={`workshops/${groupID}.html`}>{groupID}</a>
             </td>
             <td>
-              <ol>
-                {props.workshopGroups[groupID].map((workshop) => (
-                  <li>
-                    <WorkshopPreviewComponent workshop={workshop} />
-                  </li>
-                ))}
-              </ol>
+              {props.workshopGroups[groupID].length}
             </td>
           </tr>
         ))}
@@ -81,16 +75,16 @@ function WorkshopGroupTableComponent(
   return (
     <table>
       <tr>
-        <th>Title</th>
-        <th>Group ID</th>
+        <th>#</th>
+        <th>Workshop</th>
         <th>Timestamp</th>
       </tr>
-      {props.workshops.map((workshop) => (
+      {props.workshops.map((workshop, i) => (
         <tr>
+          <td>{i + 1}</td>
           <td>
             <WorkshopPreviewComponent workshop={workshop} />
           </td>
-          <td>{workshop.group_id ?? "N/A"}</td>
           <td>
             <time dateTime={workshop.timestamp}>
               {workshop.timestamp}
