@@ -1,4 +1,5 @@
-import { CSS, h, Helmet, render, renderSSR } from "#/deps.ts";
+import { CSS, Helmet, render } from "#/deps.ts";
+import { withLayout } from "#/lib/layout/mod.ts";
 import type { Project } from "./projects.ts";
 
 /**
@@ -116,12 +117,6 @@ function ProjectPageComponent(props: { baseURL: string; project: Project }) {
           content={props.project.attrs?.description}
         />
         <style>{CSS}</style>
-        <script
-          src="https://ethanthatonekid.github.io/dropin-minimal-css/switcher.js"
-          type="text/javascript"
-          defer
-        >
-        </script>
       </Helmet>
 
       <article
@@ -136,26 +131,24 @@ function ProjectPageComponent(props: { baseURL: string; project: Project }) {
   );
 }
 
-function ProjectPreviewComponent(props: { project: Project }) {
+function ProjectsTableComponent(props: { projects: Project[] }) {
   return (
-    <article class="project-preview">
-      <h2>
-        <a href={`${props.project.id}.html`}>{props.project.attrs?.title}</a>
-      </h2>
-      <p>{props.project.attrs?.description}</p>
-    </article>
-  );
-}
-
-function ProjectPreviewListComponent(props: { projects: Project[] }) {
-  return (
-    <ul>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Labels</th>
+        <th>Participants</th>
+      </tr>
       {props.projects.map((project) => (
-        <li>
-          <ProjectPreviewComponent project={project} />
-        </li>
+        <tr>
+          <td>
+            <a href={`${project.id}.html`}>{project.attrs?.title}</a>
+          </td>
+          <td>{project.attrs?.labels?.join(", ")}</td>
+          <td>{project.attrs?.participants?.length ?? "N/A"}</td>
+        </tr>
       ))}
-    </ul>
+    </table>
   );
 }
 
@@ -169,46 +162,19 @@ export function ProjectsPageComponent(props: { projects: Project[] }) {
           name="description"
           content="List of initiatives owned by the Open Source Software team."
         />
-        <script
-          src="https://ethanthatonekid.github.io/dropin-minimal-css/switcher.js"
-          type="text/javascript"
-          defer
-        >
-        </script>
       </Helmet>
       <h1>Open Source Software projects</h1>
-      <ProjectPreviewListComponent projects={props.projects} />
+      <ProjectsTableComponent projects={props.projects} />
     </main>
   );
 }
 
-// deno-lint-ignore no-explicit-any
-function renderPageHTML(component: any) {
-  const html = renderSSR(component);
-  const { body, head, footer, attributes } = Helmet.SSR(html);
-  return `<!DOCTYPE html>
-<html ${attributes.html.toString()}>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-    ${head.join("\n")}
-  </head>
-  <body ${attributes.body.toString()}>${body}${footer.join("\n")}</body>
-</html>`;
-}
-
 export function renderProjectsPageHTML(projects: Project[]) {
-  return renderPageHTML(<ProjectsPageComponent projects={projects} />);
+  return withLayout(<ProjectsPageComponent projects={projects} />);
 }
 
 export function renderProjectPageHTML(project: Project, baseURL = "/") {
-  return renderPageHTML(
+  return withLayout(
     <ProjectPageComponent project={project} baseURL={baseURL} />,
   );
 }

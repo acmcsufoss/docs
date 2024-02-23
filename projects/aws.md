@@ -9,4 +9,5 @@ labels: ["nix", "shell"]
 
 ## Description
 
-acm-aws contains the Terraform deployment files for ACM at CSUF. It uses Terraform and Nix to orchestrate cloud servers.
+acm-aws contains the Terraform deployment files for ACM at CSUF. It uses
+Terraform and Nix to orchestrate cloud servers.

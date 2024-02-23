@@ -9,4 +9,5 @@ labels: ["go", "openapi", "sqlc"]
 
 ## Description
 
-CM at CSUF club API for managing events, announcements, forms, and other services!
+CM at CSUF club API for managing events, announcements, forms, and other
+services!

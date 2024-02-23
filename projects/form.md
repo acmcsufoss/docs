@@ -9,4 +9,5 @@ labels: ["typescript", "svelte"]
 
 ## Description
 
-A platform managing authenticated Discord form submissions within Discord servers.
+A platform managing authenticated Discord form submissions within Discord
+servers.
