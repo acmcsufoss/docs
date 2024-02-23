@@ -1,4 +1,4 @@
-import { Helmet } from "#/deps.ts";
+import { Helmet, render } from "#/deps.ts";
 import { withLayout } from "#/lib/shared/layout/mod.ts";
 import { PageHeading } from "#/lib/shared/page_heading/mod.ts";
 import type { Workshop, WorkshopGroup } from "./workshops.ts";
@@ -24,7 +24,7 @@ function WorkshopGroupsTableComponent(
         .map((group) => (
           <tr>
             <td>
-              <a href={`series/${group.groupID}.html`}>{group.groupID}</a>
+              <a href={`series/${group.id}.html`}>{group.id}</a>
             </td>
             <td>{group.workshops.length}</td>
           </tr>
@@ -94,22 +94,27 @@ function WorkshopGroupTableComponent(
 }
 
 function WorkshopGroupPageComponent(
-  props: { group: WorkshopGroup },
+  props: { baseURL: string; group: WorkshopGroup },
 ) {
+  const html = render(props.group.md, { baseUrl: props.baseURL });
   return (
     <main>
       <Helmet>
         <html lang="en" amp />
         <title>
-          {props.group.groupID} - Open Source Software workshops
+          {props.group.id} - Open Source Software workshops
         </title>
         <meta
           name="description"
-          content={`Workshops in the ${props.group.groupID} series`}
+          content={`Workshops in the ${props.group.id} series.`}
         />
       </Helmet>
 
-      <h1>{props.group.groupID}</h1>
+      <article
+        class="markdown-body"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+
       <WorkshopGroupTableComponent workshops={props.group.workshops} />
       <footer>
         <a href="../workshops.html">↩ Workshops</a>
@@ -120,8 +125,9 @@ function WorkshopGroupPageComponent(
 
 export function renderWorkshopGroupPageHTML(
   group: WorkshopGroup,
+  baseURL = "/",
 ) {
   return withLayout(
-    <WorkshopGroupPageComponent group={group} />,
+    <WorkshopGroupPageComponent group={group} baseURL={baseURL} />,
   );
 }

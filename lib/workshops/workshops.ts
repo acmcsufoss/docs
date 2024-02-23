@@ -1,7 +1,12 @@
-import { parseYAML } from "#/deps.ts";
+import { extract, test } from "#/deps.ts";
 
 export interface WorkshopGroup {
-  groupID: string;
+  id: string;
+  md: string;
+  workshops: Workshop[];
+}
+
+export interface WorkshopGroupAttrs {
   workshops: Workshop[];
 }
 
@@ -29,13 +34,19 @@ export function isWorkshops(obj: unknown): obj is Workshop[] {
   return Array.isArray(obj) && obj.every((workshop) => isWorkshop(workshop));
 }
 
-export function parseWorkshopsYAML(
-  content: string,
-): Workshop[] {
-  const workshops = parseYAML(content);
-  if (!isWorkshops(workshops)) {
-    throw new Error("Invalid workshops");
+export function parseWorkshopGroup(
+  filename: string,
+  md: string,
+): WorkshopGroup {
+  const id = filename.replace(/\.md$/, "");
+  if (!test(md)) {
+    throw new Error(`Invalid workshop group: ${id}`);
   }
 
-  return workshops;
+  const extracted = extract<WorkshopGroupAttrs>(md);
+  return {
+    id,
+    md: extracted.body,
+    workshops: extracted.attrs.workshops,
+  };
 }

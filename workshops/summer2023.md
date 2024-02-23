@@ -1,0 +1,48 @@
+---
+workshops:
+  - title: "Intro to Deno Kv"
+    description: "Learn how to use Deno Kv in celebration of the Deno Kv Hackathon."
+    timestamp: "2023-06-14"
+    url: "https://acmcsuf.com/denokv"
+  - title: "Intro to design documents"
+    description: "Learn how to write a design document and why it's important."
+    timestamp: "2023-06-23"
+    url: "https://acmcsuf.com/dd"
+  - title: "Intro to HTTP APIs"
+    description: "Learn how to create and use HTTP APIs."
+    timestamp: "2023-06-30"
+    url: "https://acmcsuf.com/api-workshop"
+  - title: "Intro to acmcsuf.com"
+    description: "Learn how to contribute to the ACM CSUF website."
+    timestamp: "2023-07-07"
+    url: "https://acmcsuf.com/5.1-rampup"
+  - title: "Intro to JavaScript"
+    description: "Learn the basics of JavaScript and how to use it in web development."
+    timestamp: "2023-07-14"
+    url: "https://acmcsuf.com/js-workshop"
+  - title: "Intro to TypeScript"
+    description: "Learn the basics of TypeScript and how to use it in web development."
+    timestamp: "2023-07-21"
+    url: "https://acmcsuf.com/ts-workshop"
+  - title: "Intro to Go"
+    description: "Learn the basics of Go and how to use it in web development."
+    timestamp: "2023-07-28"
+    url: "https://acmcsuf.com/go-workshop"
+  - title: "Intro to Python"
+    description: "Learn the basics of Python and how to use it in web development."
+    timestamp: "2023-08-04"
+    url: "https://github.com/acmcsufoss/py-workshop#readme"
+  - title: "How to start an open source project"
+    description: "Learn how to start an open source project and how to maintain it."
+    timestamp: "2023-08-11"
+    url: "https://acmcsuf.com/start-oss"
+  - title: "API Design"
+    description: "Learn how to design an API and how to use it in web development."
+    timestamp: "2023-08-18"
+    url: "https://acmcsuf.com/api-design-workshop"
+---
+
+# Hot Open Source Summer 2023 Workshops
+
+Here are the workshops we have hosted during the
+[Hot Open Source Summer 2023 hackathon](https://acmcsuf.com/hot).

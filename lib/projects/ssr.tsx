@@ -1,4 +1,4 @@
-import { CSS, Helmet, render } from "#/deps.ts";
+import { Helmet, render } from "#/deps.ts";
 import { withLayout } from "#/lib/shared/layout/mod.ts";
 import { PageHeading } from "#/lib/shared/page_heading/mod.ts";
 import type { Project } from "./projects.ts";
@@ -117,7 +117,6 @@ function ProjectPageComponent(props: { baseURL: string; project: Project }) {
           name="description"
           content={props.project.attrs?.description}
         />
-        <style>{CSS}</style>
       </Helmet>
 
       <article
@@ -125,9 +124,8 @@ function ProjectPageComponent(props: { baseURL: string; project: Project }) {
         dangerouslySetInnerHTML={{ __html: html }}
       />
 
-      <hr />
-
       <ProjectMetadataTableComponent project={props.project} />
+
       <footer>
         <a href="../projects.html">↩ Projects</a>
       </footer>

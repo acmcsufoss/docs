@@ -8,7 +8,7 @@ import {
 import {
   renderWorkshopGroupPageHTML,
   renderWorkshopGroupsPageHTML,
-  walkWorkshopsYAML,
+  walkWorkshopGroups,
   type WorkshopGroup,
 } from "#/lib/workshops/mod.ts";
 import { withLayout } from "#/lib/shared/layout/mod.ts";
@@ -65,24 +65,22 @@ async function main(args: string[]) {
   // Render workshops assets.
   const workshopGroups: WorkshopGroup[] = [];
   for await (
-    const group of walkWorkshopsYAML(join(flags.indir, "workshops", "*.yaml"))
+    const group of walkWorkshopGroups(join(flags.indir, "workshops", "*.md"))
   ) {
     workshopGroups.push(group);
-    const html = renderWorkshopGroupPageHTML(group);
+    const html = renderWorkshopGroupPageHTML(group, flags["base-url"]);
     await Deno.writeTextFile(
-      join(flags.outdir, "series", `${group.groupID}.html`),
+      join(flags.outdir, "series", `${group.id}.html`),
       html,
     );
     const json = JSON.stringify(group, null, 2);
     await Deno.writeTextFile(
-      join(flags.outdir, "series", `${group.groupID}.json`),
+      join(flags.outdir, "series", `${group.id}.json`),
       json,
     );
   }
 
-  const workshopsIndexHTML = renderWorkshopGroupsPageHTML(
-    workshopGroups,
-  );
+  const workshopsIndexHTML = renderWorkshopGroupsPageHTML(workshopGroups);
   await Deno.writeTextFile(
     `${flags.outdir}/workshops.html`,
     workshopsIndexHTML,
