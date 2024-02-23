@@ -1,11 +1,7 @@
 import { Helmet } from "#/deps.ts";
 import { withLayout } from "#/lib/shared/layout/mod.ts";
 import { PageHeading } from "#/lib/shared/page_heading/mod.ts";
-import {
-  DEFAULT_GROUP_ID,
-  type Workshop,
-  type WorkshopGroups,
-} from "./workshops.ts";
+import type { Workshop, WorkshopGroup } from "./workshops.ts";
 
 function WorkshopPreviewComponent(props: { workshop: Workshop }) {
   if (!props.workshop.url) {
@@ -16,7 +12,7 @@ function WorkshopPreviewComponent(props: { workshop: Workshop }) {
 }
 
 function WorkshopGroupsTableComponent(
-  props: { workshopGroups: WorkshopGroups },
+  props: { workshopGroups: WorkshopGroup[] },
 ) {
   return (
     <table>
@@ -24,16 +20,13 @@ function WorkshopGroupsTableComponent(
         <th>Series</th>
         <th>Workshops</th>
       </tr>
-      {Object.keys(props.workshopGroups)
-        .filter((groupID) => groupID !== DEFAULT_GROUP_ID)
-        .map((groupID) => (
+      {props.workshopGroups
+        .map((group) => (
           <tr>
             <td>
-              <a href={`workshops/${groupID}.html`}>{groupID}</a>
+              <a href={`series/${group.groupID}.html`}>{group.groupID}</a>
             </td>
-            <td>
-              {props.workshopGroups[groupID].length}
-            </td>
+            <td>{group.workshops.length}</td>
           </tr>
         ))}
     </table>
@@ -41,7 +34,7 @@ function WorkshopGroupsTableComponent(
 }
 
 function WorkshopGroupsPageComponent(
-  props: { workshopGroups: WorkshopGroups },
+  props: { workshopGroups: WorkshopGroup[] },
 ) {
   return (
     <main>
@@ -63,7 +56,7 @@ function WorkshopGroupsPageComponent(
 }
 
 export function renderWorkshopGroupsPageHTML(
-  workshopGroups: WorkshopGroups,
+  workshopGroups: WorkshopGroup[],
 ) {
   return withLayout(
     <WorkshopGroupsPageComponent workshopGroups={workshopGroups} />,
@@ -98,32 +91,31 @@ function WorkshopGroupTableComponent(
 }
 
 function WorkshopGroupPageComponent(
-  props: { groupID: string; workshops: Workshop[] },
+  props: { group: WorkshopGroup },
 ) {
   return (
     <main>
       <Helmet>
         <html lang="en" amp />
         <title>
-          {props.groupID} - Open Source Software workshops
+          {props.group.groupID} - Open Source Software workshops
         </title>
         <meta
           name="description"
-          content={`Workshops in the ${props.groupID} series`}
+          content={`Workshops in the ${props.group.groupID} series`}
         />
       </Helmet>
 
-      <h1>{props.groupID}</h1>
-      <WorkshopGroupTableComponent workshops={props.workshops} />
+      <h1>{props.group.groupID}</h1>
+      <WorkshopGroupTableComponent workshops={props.group.workshops} />
     </main>
   );
 }
 
 export function renderWorkshopGroupPageHTML(
-  groupID: string,
-  workshops: Workshop[],
+  group: WorkshopGroup,
 ) {
   return withLayout(
-    <WorkshopGroupPageComponent groupID={groupID} workshops={workshops} />,
+    <WorkshopGroupPageComponent group={group} />,
   );
 }

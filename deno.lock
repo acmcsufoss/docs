@@ -143,7 +143,6 @@
     "https://deno.land/x/nano_jsx@v0.1.0/htm/constants.ts": "3f296f87f03bd0ba8d7673884a1f6c4c927a2774648eaa4fd3ca9e3c46c3f7b8",
     "https://deno.land/x/nano_jsx@v0.1.0/htm/index.ts": "29912b9f7a760884fce79caca82649b9772cfa3c3272e0426a4ce377b67d70d5",
     "https://deno.land/x/nano_jsx@v0.1.0/index.ts": "0f39c911a39c61cb39f9bd8a2481500126dcb1b2a826d5b4523dd47a08b6938d",
-    "https://deno.land/x/nano_jsx@v0.1.0/jsx-runtime/index.ts": "eb3d0884774eb3bf360d731bd7787aef2701f1be7e91aff8f88da59153d6aaa5",
     "https://deno.land/x/nano_jsx@v0.1.0/jsx.ts": "7d5b4d4a249fba1a42f2016f54f71ca049d96ff490e098db4a19b2a9b197b952",
     "https://deno.land/x/nano_jsx@v0.1.0/lazy.ts": "f8b8a2b915daff1fb70704ffad5171c805f1e28778b5cd0f8c827780762776c4",
     "https://deno.land/x/nano_jsx@v0.1.0/mod.ts": "3dda2bc0dbee9abd01c03acf43ab55a7854952afe0450245fc2ad12eb9bd9598",

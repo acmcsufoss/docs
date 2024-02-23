@@ -6,13 +6,14 @@ import {
   walkProjects,
 } from "#/lib/projects/mod.ts";
 import {
-  groupWorkshops,
-  parseWorkshopsYAML,
   renderWorkshopGroupPageHTML,
   renderWorkshopGroupsPageHTML,
+  walkWorkshopsYAML,
+  type WorkshopGroup,
 } from "#/lib/workshops/mod.ts";
-import { withLayout } from "./lib/shared/layout/mod.ts";
+import { withLayout } from "#/lib/shared/layout/mod.ts";
 import { PageHeading } from "#/lib/shared/page_heading/mod.ts";
+import { join } from "#/deps.ts";
 
 // Build script for generating static site from markdown files
 // in the projects directory.
@@ -25,50 +26,57 @@ async function main(args: string[]) {
       staticdir: ["s"],
     },
     default: {
-      indir: "projects",
+      indir: "./",
       outdir: "build",
       staticdir: "static",
     },
   });
 
-  // Create outdir if it does not exist.
-  await Deno.mkdir(flags.outdir, { recursive: true });
+  // Create projects directory if it does not exist.
+  await Deno.mkdir(join(flags.outdir, "projects"), { recursive: true });
 
   // Render projects assets.
   const projects: Project[] = [];
-  for await (const project of walkProjects(`${flags.indir}/*.md`)) {
+  for await (
+    const project of walkProjects(join(flags.indir, "projects", "*.md"))
+  ) {
     projects.push(project);
     const html = renderProjectPageHTML(project, flags["base-url"]);
-    await Deno.writeTextFile(`${flags.outdir}/${project.id}.html`, html);
+    await Deno.writeTextFile(
+      join(flags.outdir, "projects", `${project.id}.html`),
+      html,
+    );
     const json = JSON.stringify(project, null, 2);
-    await Deno.writeTextFile(`${flags.outdir}/${project.id}.json`, json);
+    await Deno.writeTextFile(
+      join(flags.outdir, "projects", `${project.id}.json`),
+      json,
+    );
   }
 
   const projectsIndexHTML = await renderProjectsPageHTML(projects);
   await Deno.writeTextFile(
-    `${flags.outdir}/projects.html`,
+    join(flags.outdir, "projects.html"),
     projectsIndexHTML,
   );
 
   // Create workshops directory if it does not exist.
-  await Deno.mkdir(`${flags.outdir}/workshops`, { recursive: true });
+  await Deno.mkdir(join(flags.outdir, "series"), { recursive: true });
 
   // Render workshops assets.
-  const workshopsYAML = await Deno.readTextFile("workshops.yaml");
-  const workshopGroups = groupWorkshops(parseWorkshopsYAML(workshopsYAML));
-  for (const groupID in workshopGroups) {
-    const workshopIndexHTML = renderWorkshopGroupPageHTML(
-      groupID,
-      workshopGroups[groupID],
-    );
-
+  const workshopGroups: WorkshopGroup[] = [];
+  for await (
+    const group of walkWorkshopsYAML(join(flags.indir, "workshops", "*.yaml"))
+  ) {
+    workshopGroups.push(group);
+    const html = renderWorkshopGroupPageHTML(group);
     await Deno.writeTextFile(
-      `${flags.outdir}/workshops/${groupID}.html`,
-      workshopIndexHTML,
+      join(flags.outdir, "series", `${group.groupID}.html`),
+      html,
     );
+    const json = JSON.stringify(group, null, 2);
     await Deno.writeTextFile(
-      `${flags.outdir}/workshops/${groupID}.json`,
-      JSON.stringify(workshopGroups[groupID], null, 2),
+      join(flags.outdir, "series", `${group.groupID}.json`),
+      json,
     );
   }
 
