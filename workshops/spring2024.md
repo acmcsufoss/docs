@@ -24,6 +24,18 @@ workshops:
     description: "Wanna know how Minecraft was coded? Come learn the basics of Java! This workshop will mostly be a code along, in order to help you get started with the C-based language."
     timestamp: "2024-03-14"
     url: "https://acmcsuf.com/java-intro"
+  - title: "How to make a Discord Bot"
+    description: "Learn how to create a Discord application in Python, connect to it, and give it functionality using commands!"
+    timestamp: "2024-03-21"
+    url: "https://acmcsuf.com/discord-bot-intro"
+  - title: "Infrastructure as Code with Terraform"
+    description: "Have you ever wanted to deploy an app to the cloud but felt overwhelmed by the cloud provider’s complex/chaotic website? Come learn about how Terraform can make provisioning resources in the cloud safe and efficient , by defining our infrastructure as code!"
+    timestamp: "2024-03-28"
+    url: "https://acmcsuf.com/terraform-intro"
+  - title: "Hello World in AI"
+    description: "Join us for an interactive workshop where you'll be able to apply the fundamentals of artificial intelligence by building a digit recognizer from scratch! Bonus points if you attend the AI Team's workshop this week!!"
+    timestamp: "2024-04-11"
+    url: "https://acmcsuf.com/ai-hello-world"
 ---
 
 # Spring 2024 workshops
