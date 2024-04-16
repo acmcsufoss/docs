@@ -89,19 +89,8 @@ deno task serve
 Format the project:
 
 ```sh
-deno fmt
-```
-
-Lint the project:
-
-```sh
 deno lint
-```
-
-Update dependencies:
-
-```sh
-deno task udd
+deno check main.tsx
 ```
 
 ## References
@@ -110,4 +99,4 @@ deno task udd
 
 ---
 
-Maintained with 💚 by [**@acmcsufoss**](https://github.com/acmcsufoss)
+Maintained with 💚 [**@acmcsufoss**](https://github.com/acmcsufoss)
