@@ -15,6 +15,10 @@ import { withLayout } from "#/lib/shared/layout/mod.ts";
 import { PageHeading } from "#/lib/shared/page_heading/mod.ts";
 import { join } from "#/deps.ts";
 
+if (import.meta.main) {
+  await main(Deno.args);
+}
+
 // Build script for generating static site from markdown files
 // in the projects directory.
 async function main(args: string[]) {
@@ -80,7 +84,12 @@ async function main(args: string[]) {
     );
   }
 
-  const workshopsIndexHTML = renderWorkshopGroupsPageHTML(workshopGroups);
+  const sortedWorkshopGroups = workshopGroups.sort((a, b) => {
+    const workshopA = new Date(a.workshops[0].timestamp ?? 0);
+    const workshopB = new Date(b.workshops[0].timestamp ?? 0);
+    return workshopA.getTime() - workshopB.getTime();
+  });
+  const workshopsIndexHTML = renderWorkshopGroupsPageHTML(sortedWorkshopGroups);
   await Deno.writeTextFile(
     `${flags.outdir}/workshops.html`,
     workshopsIndexHTML,
@@ -125,8 +134,4 @@ async function main(args: string[]) {
       </main>,
     ),
   );
-}
-
-if (import.meta.main) {
-  await main(Deno.args);
 }
