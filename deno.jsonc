@@ -1,7 +1,5 @@
 {
   "tasks": {
-    "lock": "deno cache --lock=deno.lock --lock-write deps.ts",
-    "udd": "deno run -Ar https://deno.land/x/udd/main.ts deps.ts && deno task lock",
     "build": "deno run -A main.tsx",
     "dev": "deno run -A --watch main.tsx",
     "serve": "deno run -A https://deno.land/std/http/file_server.ts build"
