@@ -36,6 +36,10 @@ workshops:
     description: "Join us for an interactive workshop where you'll be able to apply the fundamentals of artificial intelligence by building a digit recognizer from scratch! Bonus points if you attend the AI Team's workshop this week!!"
     timestamp: "2024-04-11"
     url: "https://acmcsuf.com/ai-hello-world"
+  - title: "Basics of HTMX and Go"
+    description: "Are you tired of seeing your bundle size hit astronomical levels when using modern frontend frameworks like react/next.js? Wish you could just write web applications without having to ever touch a line of javascript? Well we got a treat for you! In this week's double workshop we will be covering the basics of Go for developing fast, scalable backends and HTMX for making frontends without Javascript*! Come check it out and see how you can potentially speed up your development with the simplicity of Go and HTMX!"
+    timestamp: "2024-04-18"
+    url: "https://acmcsuf.com/htmx-go"
 ---
 
 # Spring 2024 workshops
