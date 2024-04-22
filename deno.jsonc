@@ -1,12 +1,12 @@
 {
   "tasks": {
     "build": "deno run -A main.tsx",
+    "check": "deno check main.tsx",
     "dev": "deno run -A --watch main.tsx",
     "serve": "deno run -A https://deno.land/std/http/file_server.ts build"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxFactory": "h",
     "jsxImportSource": "nano_jsx"
   },
   "imports": {

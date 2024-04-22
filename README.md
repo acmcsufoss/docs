@@ -89,8 +89,14 @@ deno task serve
 Format the project:
 
 ```sh
+deno fmt
+```
+
+Check for common errors:
+
+```sh
 deno lint
-deno check main.tsx
+deno task check
 ```
 
 ## References
