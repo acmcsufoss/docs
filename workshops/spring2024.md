@@ -40,6 +40,10 @@ workshops:
     description: "Are you tired of seeing your bundle size hit astronomical levels when using modern frontend frameworks like react/next.js? Wish you could just write web applications without having to ever touch a line of javascript? Well we got a treat for you! In this week's double workshop we will be covering the basics of Go for developing fast, scalable backends and HTMX for making frontends without Javascript*! Come check it out and see how you can potentially speed up your development with the simplicity of Go and HTMX!"
     timestamp: "2024-04-18"
     url: "https://acmcsuf.com/htmx-go"
+  - title: "Career Paths in Tech"
+    description: "Have you found an interest in our projects or any specific classes? Have you maybe not found your calling at all? Join us for a mini workshop on career paths in tech! We'll be sharing the many options and paths that you can take with your degree. We encourage everyone to attend as it'll help set a course on how to achieve your desired career!"
+    timestamp: "2024-04-25"
+    url: "https://acmcsuf.com/career-paths-slides"
 ---
 
 # Spring 2024 workshops
