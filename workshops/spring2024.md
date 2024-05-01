@@ -44,6 +44,10 @@ workshops:
     description: "Have you found an interest in our projects or any specific classes? Have you maybe not found your calling at all? Join us for a mini workshop on career paths in tech! We'll be sharing the many options and paths that you can take with your degree. We encourage everyone to attend as it'll help set a course on how to achieve your desired career!"
     timestamp: "2024-04-25"
     url: "https://acmcsuf.com/career-paths-slides"
+  - title: "Commencement Ceremony"
+    description: "Curious to see what this team has worked on all semester? Come to our LAST meeting for OSS this semester! If you haven't attended before this is the perfect opportunity to get to know what the team is about and what projects we have worked on. Get free prizes and snacks for this finale event!"
+    timestamp: "2024-05-02"
+    url: "https://acmcsuf.com/oss-rewind"
 ---
 
 # Spring 2024 workshops
