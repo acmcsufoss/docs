@@ -8,6 +8,10 @@ workshops:
     description: "Join us for an open discussion on web development. ️Got a question about HTML, CSS, JavaScript, or anything else web-related? This is your chance to get answers from experienced developers in a friendly, casual setting. "
     timestamp: "2024-06-13"
     url: "https://acmcsuf.com/webdev-at-night"
+  - title: "Subabase"
+    description: "In this week's workshop, we will be covering databases with Supabase, a super based open source firebase alternative."
+    timestamp: "2024-06-20"
+    url: "https://acmcsuf.com/supa-slides"
 ---
 
 # Open Source Summer 2024 Workshops
