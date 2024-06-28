@@ -12,6 +12,10 @@ workshops:
     description: "In this week's workshop, we will be covering databases with Supabase, a super based open source firebase alternative."
     timestamp: "2024-06-20"
     url: "https://acmcsuf.com/supa-slides"
+  - title: "Meta Frameworks"
+    description: "Interested in diving deeper into web development? Join us as we compare and contrast popular meta frameworks like SvelteKit, Fresh,Next.js, Qwik City, Astro, and more!"
+    timestamp: "2024-06-27"
+    url: "https://acmcsuf.com/mf-slides"
 ---
 
 # Open Source Summer 2024 Workshops
