@@ -16,6 +16,10 @@ workshops:
     description: "Interested in diving deeper into web development? Join us as we compare and contrast popular meta frameworks like SvelteKit, Fresh,Next.js, Qwik City, Astro, and more!"
     timestamp: "2024-06-27"
     url: "https://acmcsuf.com/mf-slides"
+  - title: "Svelte Summer"
+    description: "Grab a Slurpee and join us as we showcase web development in Svelte. Learn why we use Svelte in so many of our Open Source Software projects!"
+    timestamp: "2024-07-11"
+    url: "https://acmcsuf.com/svelte-summer-slides"
 ---
 
 # Open Source Summer 2024 Workshops
