@@ -20,6 +20,10 @@ workshops:
     description: "Grab a Slurpee and join us as we showcase web development in Svelte. Learn why we use Svelte in so many of our Open Source Software projects!"
     timestamp: "2024-07-11"
     url: "https://acmcsuf.com/svelte-summer-slides"
+  - title: "GitHub Genius"
+    description: "Come and join our workshop where we will show you the in and outs of Github and you will become the Github Genius by the end of it!"
+    timestamp: "2024-07-18"
+    url: "https://acmcsuf.com/github-genius-slides"
 ---
 
 # Open Source Summer 2024 Workshops
