@@ -24,6 +24,10 @@ workshops:
     description: "Come and join our workshop where we will show you the in and outs of GitHub and you will become the GitHub Genius by the end of it!"
     timestamp: "2024-07-18"
     url: "https://acmcsuf.com/github-genius-slides"
+  - title: "Intro to JavaScript"
+    description: "Join us for an introduction to Javascript! We will show you how useful it is to know Javascript and how you can use it in your projects."
+    timestamp: "2024-07-25"
+    url: "https://acmcsuf.com/intro-to-js-slides"
 ---
 
 # Open Source Summer 2024 Workshops
