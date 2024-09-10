@@ -1,13 +1,13 @@
 ---
-title: "acm-aws"
-repository: "acm-aws"
+title: "acm-server"
+repository: "acm-server"
 participants: ["@diamondburned", "@EthanThatOneKid", "@akanksh5", "@dhnpx", "@Haothai1"]
 labels: ["nix", "shell"]
 ---
 
-# acm-aws
+# acm-server
 
 ## Description
 
-acm-aws contains the Terraform deployment files for ACM at CSUF. It uses
+acm-server contains the Terraform deployment files for ACM at CSUF. It uses
 Terraform and Nix to orchestrate cloud servers.
