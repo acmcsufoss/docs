@@ -1,7 +1,7 @@
 ---
 title: "Trends"
 repository: "trends"
-participants: ["@ruby510", "@EthanThatOneKid", "Boushra", "Joel", "Patrick H", "@victoria-uriostegui"]
+participants: ["@ruby510", "@EthanThatOneKid", "@boushrabettir", "@jjoeldaniel", "Patrick H", "@victoria-uriostegui"]
 labels: ["python"]
 ---
 

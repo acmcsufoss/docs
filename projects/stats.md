@@ -1,7 +1,7 @@
 ---
 title: "acmcsufoss-stats"
 repository: "acmcsufoss-stats"
-participants: ["@tomasohCHOM", "EvanCPSC", "@JOwen-ster"]
+participants: ["@tomasohCHOM", "@EvanCPSC", "@JOwen-ster"]
 labels: ["python"]
 ---
 

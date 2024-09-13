@@ -1,7 +1,7 @@
 ---
 title: "acm-server"
 repository: "acm-server"
-participants: ["@diamondburned", "@EthanThatOneKid", "@akanksh5", "@dhnpx", "@Haothai1"]
+participants: ["@diamondburned", "@amyipdev", "@EthanThatOneKid", "@akanksh5", "@dhnpx", "@Haothai1", "@tomasohCHOM"]
 labels: ["nix", "shell"]
 ---
 

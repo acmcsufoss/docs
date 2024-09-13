@@ -1,7 +1,7 @@
 ---
 title: "Form"
 repository: "form"
-participants: [ "@AlexthePear", "@EthanThatOneKid", "@keillor", "@k8iekitkat", "@dhnpx"]
+participants: [ "@AlexthePear", "@EthanThatOneKid", "@keillor", "@k8iekitkat", "@dhnpx", "@tomasohCHOM"]
 labels: ["typescript", "svelte"]
 ---
 
