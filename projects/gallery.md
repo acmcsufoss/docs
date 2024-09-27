@@ -1,7 +1,15 @@
 ---
 title: "gallery"
 repository: "acm-gallery"
-participants: ["@tomasohCHOM", "@26samaahmed", "@tylermlui"]
+participants:
+  - "@tylermlui"
+  - "@26samaahmed"
+  - "@tomasohCHOM"
+  - "@bryamphan"
+  - "@kalmk"
+  - "@lori33c"
+  - "@olasores"
+  - "@nickmarietta"
 labels: ["svelte", "typescript"]
 ---
 

@@ -1,7 +1,10 @@
 ---
 title: "acmJane"
 repository: "acmJane"
-participants: ["@EthanThatOneKid", "@jjoeldaniel", "@owen-rote"]
+participants:
+  - "@EthanThatOneKid"
+  - "@jjoeldaniel"
+  - "@owen-rote"
 labels: ["python"]
 ---
 

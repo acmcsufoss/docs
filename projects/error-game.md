@@ -1,7 +1,10 @@
 ---
 title: "Error Game"
 repository: "https://acmcsuf.com/issues/853"
-participants: ["@EthanThatOneKid", "@JeremiahHerring", "@noahbei"]
+participants:
+  - "@EthanThatOneKid"
+  - "@JeremiahHerring"
+  - "@noahbei"
 labels: ["svelte", "javascript", "typescript"]
 ---
 

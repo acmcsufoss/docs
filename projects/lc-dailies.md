@@ -1,7 +1,9 @@
 ---
 title: "LC-Dailies"
 repository: "lc-dailies"
-participants: ["@EthanThatOneKid", "@karnikaavelumani"]
+participants:
+  - "@EthanThatOneKid"
+  - "@karnikaavelumani"
 labels: ["typescript"]
 ---
 

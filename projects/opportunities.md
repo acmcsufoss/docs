@@ -1,7 +1,10 @@
 ---
 title: "acmOpportunities"
 repository: "acmOpportunities"
-participants: ["@EthanThatOneKid", "@boushrabettir", "@tomasohCHOM"]
+participants:
+  - "@EthanThatOneKid"
+  - "@boushrabettir"
+  - "@tomasohCHOM"
 labels: ["python"]
 ---
 

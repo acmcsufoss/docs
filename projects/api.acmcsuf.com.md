@@ -17,6 +17,11 @@ participants:
   - "@Haothai1"
   - "@VickyaWei"
   - "@weiweili1207"
+  - "@noah-hw-kim"
+  - "@rhellwege"
+  - "@ahpham123"
+  - "@Peterchauu"
+  - "@KQPH"
 labels: ["go", "openapi", "sqlc"]
 ---
 

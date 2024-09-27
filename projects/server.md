@@ -1,8 +1,15 @@
 ---
 title: "acm-server"
 repository: "acm-server"
-participants: ["@diamondburned", "@amyipdev", "@EthanThatOneKid", "@akanksh5", "@dhnpx", "@Haothai1", "@tomasohCHOM"]
-labels: ["nix", "shell"]
+participants:
+  - "@diamondburned"
+  - "@amyipdev"
+  - "@EthanThatOneKid"
+  - "@akanksh5"
+  - "@dhnpx"
+  - "@Haothai1"
+  - "@tomasohCHOM"
+labels: ["nix", "terraform", "shell"]
 ---
 
 # acm-server
