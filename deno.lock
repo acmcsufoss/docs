@@ -1,11 +1,5 @@
 {
   "version": "3",
-  "redirects": {
-    "https://esm.sh/v135/@types/he@~1.2/index.d.ts": "https://esm.sh/v135/@types/he@1.2.3/index.d.ts",
-    "https://esm.sh/v135/@types/katex@~0.16/index.d.ts": "https://esm.sh/v135/@types/katex@0.16.7/index.d.ts",
-    "https://esm.sh/v135/@types/prismjs@^1/index.d.ts": "https://esm.sh/v135/@types/prismjs@1.26.3/index.d.ts",
-    "https://esm.sh/v135/@types/sanitize-html@^2/index.d.ts": "https://esm.sh/v135/@types/sanitize-html@2.11.0/index.d.ts"
-  },
   "remote": {
     "https://deno.land/std@0.217.0/assert/assert.ts": "bec068b2fccdd434c138a555b19a2c2393b71dfaada02b7d568a01541e67cdc5",
     "https://deno.land/std@0.217.0/assert/assertion_error.ts": "9f689a101ee586c4ce92f52fa7ddd362e86434ffdf1f848e45987dc7689976b8",
@@ -120,7 +114,6 @@
     "https://deno.land/x/emoji@0.3.0/all.json": "f0553b660db5e44e71ca46f637a06c2ec94f34445a920fcf319858094a91f46b",
     "https://deno.land/x/emoji@0.3.0/emoji.ts": "ad21fa393b2b96fb5999f58dec18e13628cc5d11aa370c42a2f7cc8e135d43d8",
     "https://deno.land/x/emoji@0.3.0/mod.ts": "9ef5a2fca1a633f29747b6d3254afd19545cef586128a8213a1003ee2808186d",
-    "https://deno.land/x/emoji@0.3.0/types.ts": "5897345f500088c719a35388c5b192bc5d93fc2c13e37d94eafa8ff3480edd17",
     "https://deno.land/x/emoji@0.3.0/unicode.ts": "ac8079e8e1da66ae9e601c1fdd0e7641120c2b07ca7bd2875e65fe23e16e6199",
     "https://deno.land/x/gfm@0.6.0/deps.ts": "3fd89fbfbdf79c35e494b0d25f83fc96e76fa6a25abfbddf950142745b9fec79",
     "https://deno.land/x/gfm@0.6.0/mod.ts": "c953d0fc8b9a0a9ab13e29499b3cb1adbe5b36c00225ff4f71d139a2994f7a90",
