@@ -12,4 +12,12 @@ workshops:
     description: "Want to start contributing to our Open Source projects? Join us and learn SvelteKit, the framework behind many of our projects! We’ll cover the basics like project setup, routing, and dynamic components, so you can start building and contributing right away."
     timestamp: "2025-02-27"
     url: "https://acmcsuf.com/oss/sveltekit-intro-sp25"
+  - title: "Learning to Learn"
+    description: "With so many technologies and skills to choose from, learning can feel pretty overwhelming. In our Learning to Learn workshop, we'll share practical tips for picking up any skill effectively. Plus, we’ll talk about our own learning journeys like what’s worked and what hasn’t so you can learn from our experiences!"
+    timestamp: "2025-03-06"
+    url: "https://acmcsuf.com/oss/learning-sp25"
+  - title: "Project Work Session"
+    description: "Thinking about contributing to open source but not sure where to start? Come hang out with us this Thursday! We’ll be making progress on our open source projects, assigning tasks, and just having a chill work session as a break from midterms!!"
+    timestamp: "2025-03-13"
+    url: ""
 ---
