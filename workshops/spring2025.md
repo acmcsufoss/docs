@@ -20,4 +20,8 @@ workshops:
     description: "Thinking about contributing to open source but not sure where to start? Come hang out with us this Thursday! We’ll be making progress on our open source projects, assigning tasks, and just having a chill work session as a break from midterms!!"
     timestamp: "2025-03-13"
     url: ""
+  - title: "OSS Rapid Fire"
+    description: "Looking for open-source alternatives to your go-to software? Want to start contributing beyond ACM OSS? Join us as we share powerful open-source tools and exciting projects to help you kickstart your open-source journey!"
+    timestamp: "2025-03-20"
+    url: "https://acmcsuf.com/oss/oss-rapid-fire-sp25"
 ---
