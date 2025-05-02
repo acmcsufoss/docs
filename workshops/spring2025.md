@@ -40,4 +40,8 @@ workshops:
     description: "Our favorite creator is back!!!! We’re excited to welcome back Melkey, a Software Developer at Twitch and creator of go blueprint, as he shares his experiences navigating CS, building cool things, and making an impact in the open source world. This is also your chance to ask him anything you're curious about , from career paths to content creation to open source tips."
     timestamp: "2025-04-24"
     url: "https://acmcsuf.com/oss/cs-journeys-sp25"
+  - title: "OSS Commencement"
+    description: "Come celebrate with us at our final workshop of the year! 💚 We'll look back on all the amazing progress we've made together, enjoy some fun skits prepared by the board, and give out exciting prizes."
+    timestamp: "2025-05-01"
+    url: "https://acmcsuf.com/oss/commencement-sp25"
 ---
